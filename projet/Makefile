@@ -18,6 +18,9 @@ option.o: $(REG)option.c $(REG)option.h $(REG)algo.h
 
 liste.o: $(REG)liste.c $(REG)liste.h
 
+test.o : $(REG)test.c $(REG)test.h $(REG)liste.h $(REG)option.h $(REG)algo.h $(REG)graph.h
+
+
 %.o: $(REG)%.c
 	$(CC) -c $< $(CFLAGS)
 
