@@ -30,7 +30,7 @@ void initialisePolygone(Polygon* poly, Point* p){
 }
 
 
-void insererEnTete(Polygon* poly, Point* p){
+Polygon insererEnTete(Polygon* poly, Point* p){
     Polygon tmp;
 
     assert(p != NULL);
@@ -45,10 +45,12 @@ void insererEnTete(Polygon* poly, Point* p){
         tmp->prev = (*poly)->prev;
         (*poly)->prev->next = tmp;
         (*poly)->prev = tmp;
+        return tmp;
     }
+    return NULL;
 }
 
-void insererCellule(Polygon* poly, Point* p){
+Polygon insererCellule(Polygon* poly, Point* p){
     Polygon at;
 
     assert(p != NULL);
@@ -56,7 +58,7 @@ void insererCellule(Polygon* poly, Point* p){
     assert(poly != NULL);
 
     for(at = (*poly)->next; at != (*poly) && sqrt(pow((*poly)->s->x, 2) + pow((*poly)->s->y, 2)) <= sqrt(pow(p->x, 2) + pow(p->y, 2)); at = at->next);
-    insererEnTete(poly, p);
+    return insererEnTete(poly, p);
 }
 
 
@@ -70,6 +72,7 @@ void supprimerCellule(Polygon* poly){
     free((*poly));
 
     (*poly) = (*poly)->next;
+
     
 }
 
@@ -79,10 +82,41 @@ void libererListe(Polygon* poly){
     Polygon tmp, at;
     assert(poly != NULL);
 
-    for(at = (*poly)->next; at != (*poly); at = at->next){
+    at = (*poly)->next;
+
+    while(at != (*poly)){
+        
         tmp = at;
+        at = at->next;
         free(tmp);
     }
 
     free((*poly));
+}
+
+
+int  taille_poly(Polygon poly){
+    Polygon premier;
+    int i;
+
+    if(poly == NULL){
+        return 0;
+    }
+    i = 1;
+    for(premier = poly->next ; poly != premier; premier = premier->next){
+         i++;
+    };
+    return i;
+}
+
+
+
+void affiche_liste(Polygon poly){
+    Polygon at;
+
+    for(at = poly->next; at != poly; at = at->next){
+        printf("[%d, %d]->", at->s->x, at->s->y);
+    }
+    printf("[%d, %d]->", poly->s->x, poly->s->y);
+    printf("\n");
 }

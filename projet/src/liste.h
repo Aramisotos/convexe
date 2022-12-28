@@ -1,3 +1,15 @@
+/**
+ * @file liste.h
+ * @author Marc POTTIER Yanis TWARDAWA
+ * @brief header qui regroupe les fonctions et strcuture pour 
+ * manipuler des liste de polygones
+ * @version 0.1
+ * @date 2022-12-27
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
@@ -48,8 +60,9 @@ void initialisePolygone(Polygon* poly, Point* p);
  * 
  * @param poly 
  * @param p 
+ * @return int 
  */
-void insererEnTete(Polygon* poly, Point* p);
+Polygon insererEnTete(Polygon* poly, Point* p);
 
 
 /**
@@ -57,8 +70,9 @@ void insererEnTete(Polygon* poly, Point* p);
  * 
  * @param poly 
  * @param p 
+ * @return int 
  */
-void insererCellule(Polygon* poly, Point* p);
+Polygon insererCellule(Polygon* poly, Point* p);
 
 /**
  * @brief suprime la cellule voulue
@@ -75,5 +89,15 @@ void supprimerCellule(Polygon* poly);
  */
 void libererListe(Polygon* poly);
 
+/**
+ * @brief fonction qui calcule le nombre de point dans le polygonne
+ * (nombre d'élément de la liste)
+ * 
+ * @param poly 
+ * @return int 
+ */
+int taille_poly(Polygon poly);
+
+void affiche_liste(Polygon poly);
 
 #endif
