@@ -1,3 +1,13 @@
+ /**
+ * @file algo.h
+ * @author Marc POTTIER Yanis TWARDAWA
+ * @brief header qui regroupe toute les fonction qui permette de faire tourner les different algo
+ * @version 0.1
+ * @date 2023-01-06
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
  #include "graph.h"
 
 #ifndef __ALGO__

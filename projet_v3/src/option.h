@@ -1,3 +1,13 @@
+/**
+ * @file option.h
+ * @author Marc POTTIER Yanis TWARDAWA
+ * @brief header qui regroupe toute les fonction permettant de gerer les differente option
+ * @version 0.1
+ * @date 2023-01-06
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include "algo.h"
 
 #ifndef __OPTION__
