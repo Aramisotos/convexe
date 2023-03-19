@@ -1,6 +1,8 @@
 # convexe
 Projet de fin de semestre en prog C sur les enveloppes convexes
 
+Attention pour utiliser ce projet il faut avoir installé la bibliothèque MLV cette dernière ne focntionnant que sur un environnement linux, pour savoir comment l'installer rendez-vous à cette adresse : http://www-igm.univ-mlv.fr/~boussica/mlv/index.html.
+
 Compilation:
 
 Pour compiler un makefile à été réalisé pour faciliter la compilation vous avez plusieurs possibilités:
